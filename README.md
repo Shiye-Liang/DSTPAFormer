@@ -10,7 +10,7 @@ Transformer and graph convolution-based methods have achieved remarkable progres
 
 The overall architecture of DSTPFormer is illustrated in **Fig.1**, which shows the complete pipeline of the proposed method.
 
-![Framework](figs/fig1.pdf)
+![Framework](figs/fig1.png)
 
 The framework consists of three main stages:
 
@@ -33,7 +33,7 @@ The overall design ensures strong structural consistency and temporal stability 
 
 The Spatial and Temporal Prior Attention mechanisms are illustrated in **Fig.2**.
 
-![SPA_TPA](figs/fig2.pdf)
+![SPA_TPA](figs/fig2.png)
 
 - **SPA (Spatial Prior Attention)** models structural dependencies among human joints within each frame.
 - **TPA (Temporal Prior Attention)** captures motion continuity across consecutive frames.
@@ -45,7 +45,7 @@ The Spatial and Temporal Prior Attention mechanisms are illustrated in **Fig.2**
 
 The structure of the Prior Aggregation Module (PAM) is shown in **Fig.3**.
 
-![PAM](figs/fig3.pdf)
+![PAM](figs/fig3.png)
 
 - PAM integrates spatial and temporal priors into a unified representation.
 - It adaptively balances multiple prior signals.
@@ -57,7 +57,7 @@ The structure of the Prior Aggregation Module (PAM) is shown in **Fig.3**.
 
 The SDCF module is illustrated in **Fig.4**.
 
-![SDCF](figs/fig4.pdf)
+![SDCF](figs/fig4.png)
 
 - Performs bidirectional cross-fusion between spatial and temporal branches.
 - Explicitly encodes human kinematic constraints.
