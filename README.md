@@ -8,18 +8,22 @@ Transformer and graph convolution-based methods have achieved remarkable progres
 
 ## Framework Overview
 
-The overall architecture of DSTPFormer consists of three main stages:
+The overall architecture of DSTPFormer is illustrated in **Fig.1**, which shows the complete pipeline of the proposed method.
+
+![Framework](figs/fig1.pdf)
+
+The framework consists of three main stages:
 
 1. **Feature Embedding**  
    Input 2D pose sequences are first embedded into high-dimensional feature representations.
 
-2. **Dynamic Prior Learning Module**  
-   Spatial and temporal priors are explicitly modeled and dynamically adjusted during training.
+2. **Dynamic Spatial–Temporal Prior Learning**  
+   Spatial and temporal priors are explicitly modeled and dynamically adjusted to guide representation learning.
 
 3. **Transformer-based Pose Decoder**  
    A Transformer backbone aggregates spatial-temporal dependencies and predicts 3D joint coordinates.
 
-The model effectively integrates structural knowledge into attention learning, ensuring both spatial consistency and temporal smoothness.
+The overall design ensures strong structural consistency and temporal stability in 3D pose estimation.
 
 ---
 
@@ -27,26 +31,37 @@ The model effectively integrates structural knowledge into attention learning, e
 
 ### SPA and TPA (Spatial & Temporal Prior Attention)
 
+The Spatial and Temporal Prior Attention mechanisms are illustrated in **Fig.2**.
+
+![SPA_TPA](figs/fig2.pdf)
+
 - **SPA (Spatial Prior Attention)** models structural dependencies among human joints within each frame.
 - **TPA (Temporal Prior Attention)** captures motion continuity across consecutive frames.
-- Both modules introduce prior-guided attention to improve pose coherence and reduce ambiguity.
+- These priors enhance both spatial coherence and temporal smoothness.
 
 ---
 
 ### PAM (Prior Aggregation Module)
 
-The **PAM** module is designed to aggregate spatial and temporal priors into a unified representation. It adaptively fuses different prior signals, enabling the model to dynamically balance spatial structure and temporal dynamics.
+The structure of the Prior Aggregation Module (PAM) is shown in **Fig.3**.
+
+![PAM](figs/fig3.pdf)
+
+- PAM integrates spatial and temporal priors into a unified representation.
+- It adaptively balances multiple prior signals.
+- Enhances feature consistency across spatial-temporal dimensions.
 
 ---
 
 ### SDCF (Structure-aware Dynamic Cross Fusion)
 
-The **SDCF** module performs cross-fusion between spatial and temporal branches:
+The SDCF module is illustrated in **Fig.4**.
 
-- Explicitly encodes human kinematic constraints
-- Enables bidirectional information exchange
-- Enhances feature interaction between spatial and temporal streams
-- Improves structural consistency of predicted poses
+![SDCF](figs/fig4.pdf)
+
+- Performs bidirectional cross-fusion between spatial and temporal branches.
+- Explicitly encodes human kinematic constraints.
+- Strengthens structural consistency in pose estimation.
 
 ---
 
